@@ -307,7 +307,10 @@ export default class App extends Component {
                                 value = {this.state.newSpell}
                               />
                             <TouchableHighlight
-                              onPress={() => {this.state.spells.splice(this.state.spells.length,0,this.state.newSpell)}}
+                              onPress={() => {
+                                this.state.spells.splice(this.state.spells.length,0,this.state.newSpell);
+                                this.setState({newSpell:'Add a Spell'});
+                              }}
                             >
                               <View style={{height:deviceHeight/12,width:deviceWidth/8,borderWidth:1}}> + </View>
                             </TouchableHighlight>
@@ -330,8 +333,12 @@ export default class App extends Component {
                                 value = {this.state.newAttack}
                               />
                             <TouchableHighlight
-                              onPress={() => {this.state.attacks.splice(this.state.attacks.length,0,this.state.newAttack)}}
+                              onPress={() => {
+                                this.state.attacks.splice(this.state.attacks.length,0,this.state.newAttack);
+                                this.setState({newAttack:'Add an Attack'});
+                              }}
                             >
+                            
                               <View style={{height:deviceHeight/12,width:deviceWidth/8,borderWidth:1}}> + </View>
                             </TouchableHighlight>
                           </View>
